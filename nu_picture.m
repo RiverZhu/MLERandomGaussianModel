@@ -1,0 +1,19 @@
+% g(nu) Eq.50
+% Ruohai Guo
+% e-mail: rhguo@zju.edu.cn
+% Date: 2025. 05. 19
+
+function KKT_nu = nu_picture(nu,y1_tilde,y2_tilde,sigma,sigma_e,sigma_n,m,y2_tilde_norm)
+if isnan(y2_tilde)
+    KKT_nu = sum(abs(y1_tilde) .^ 2 - abs(y1_tilde) .^ 2 .*sigma .^ 2 ./...
+            (sigma .^ 2 + 2 * nu * sigma_e),'all') + y2_tilde_norm - ...
+            m * (sum(sigma_e * abs(y1_tilde) .^ 2 .*sigma .^ 2 ./ ...
+            (sigma .^ 2 + 2 * nu * sigma_e).^2 ,"all") + sigma_n) + 2 * nu *sigma_n;
+        
+else
+    KKT_nu = sum(abs(y1_tilde) .^ 2 - abs(y1_tilde) .^ 2 .*sigma .^ 2 ./...
+            (sigma .^ 2 + 2 * nu * sigma_e),'all') + norm(y2_tilde)^2 - ...
+            m * (sum(sigma_e * abs(y1_tilde) .^ 2 .*sigma .^ 2 ./ ...
+            (sigma .^ 2 + 2 * nu * sigma_e).^2 ,"all") + sigma_n) + 2 * nu *sigma_n;
+        
+end

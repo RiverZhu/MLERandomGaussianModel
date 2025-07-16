@@ -1,1 +1,1 @@
-This implements the maximum likelihood estimator for the random Gaussian measurement model. The code is written by Ruohai Guo and Jiang Zhu. If you have any problems, please feel free to contact jiangzhu16@zju.edu.cn.
+This implements the maximum likelihood estimator for the random Gaussian measurement model, see the following arXiv paper: https://arxiv.org/abs/2507.11249. The code is written by Ruohai Guo and Jiang Zhu. If you have any problems, please feel free to contact jiangzhu16@zju.edu.cn.
